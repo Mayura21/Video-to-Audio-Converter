@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb  # This MUST match the hostname in your Python MONGO_URI
+spec:
+  selector:
+    app: mongodb # This MUST match the label on your MongoDB Pod
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
